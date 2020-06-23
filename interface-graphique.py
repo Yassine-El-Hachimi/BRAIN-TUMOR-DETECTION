@@ -17,9 +17,9 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-modelAdam = tf.keras.models.load_model('Brain_tumorBAdam.h5')
-modelRMS = tf.keras.models.load_model('Brain_tumorBRMSpropV2.h5')
-modelSGD = tf.keras.models.load_model('Brain_tumorSGD.h5')
+modelAdam = tf.keras.models.load_model('Brain_tumor.*.h5/Brain_tumorBAdam.h5')
+modelRMS = tf.keras.models.load_model('Brain_tumor.*.h5/Brain_tumorBRMSpropV2.h5')
+modelSGD = tf.keras.models.load_model('Brain_tumor.*.h5/Brain_tumorSGD.h5')
 
 result = [""]*1
 choix = [0]*3
@@ -171,8 +171,10 @@ def plot():
 	label3.image = myImage
 
 
-def next():
-    print("next")
+def delete():
+	labe.config(image = "")
+	label.config(image = "")
+	label3.config(image = "")
 #logo de l'application
 image =PhotoImage(file="logo2.png").zoom(15).subsample(45)
 canvas = tkinter.Canvas(window,width=190,height=200,bg='#1C1536',bd=0,highlightthickness=0)
@@ -288,7 +290,7 @@ btn3.place( x = 840,y=100)
 
 #PREVIOUS
 photop4 = PhotoImage(file="previous.png")
-btn4 = tkinter.Button(window,image = photop4,command = next,border = 0,bg="white",height = 65,width = 185)
+btn4 = tkinter.Button(window,image = photop4,command = delete,border = 0,bg="white",height = 65,width = 185)
 btn4.place( x = 290,y=500)
 
 #PLOT graphe
@@ -301,7 +303,6 @@ btn5.place( x = 840,y=500)
 canvas1 = Canvas(window,relief="ridge", width=250, height=250, bg='#ffffff')
 labe= tkinter.Label(window,bg='#ffffff')
 labe.place(x=253,y=212)
-
 canvas1.place(x=250,y=210)
 
 #CANVAS PREPROCESSING
@@ -331,4 +332,3 @@ label_copy.place(x=555,y=620)
 
 window.resizable(0,0)
 window.mainloop()
-
