@@ -1,6 +1,6 @@
 # Application De classification des images médicales dans une Big Data
+![apps](https://user-images.githubusercontent.com/60265756/85435421-b760ac80-b587-11ea-85d9-c5b7d28c4d13.png)
 
-![Screenshot from 2020-05-25 16-00-13](https://user-images.githubusercontent.com/60265756/83328633-aec8cf00-a284-11ea-970a-492e5eb4da5b.png)
 
 User Stories :
 
